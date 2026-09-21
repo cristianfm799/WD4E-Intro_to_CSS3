@@ -27,13 +27,20 @@ main {
     padding: 30px;
 }
 
-/* PASO 7: Estilo para la etiqueta footer */
+/* PASO 7: Estilizar la etiqueta footer y asegurar alto contraste */
 footer {
-    background-color: #212529;
-    color: #ffffff;
+    background-color: #212529;     /* Gris oscuro */
+    color: #ffffff !important;     /* Forzar texto blanco */
     padding: 15px;
     text-align: center;
 }
+
+/* Regla extra para arreglar los enlaces ocultos del footer que detecta WAVE */
+footer a {
+    color: #3182ce !important;     /* Un azul claro brillante que resalta en fondo oscuro */
+    text-decoration: underline;
+}
+
 
 /* PASO 8: Estilo para la etiqueta li */
 li {

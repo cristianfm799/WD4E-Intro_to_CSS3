@@ -1,0 +1,169 @@
+/* ========================================================
+   1. ESTILOS GENERALES Y BASE
+   ======================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    color: #1a1a1a;
+    background-color: #f7fafc;
+}
+
+header {
+    background-color: #1a365d; /* Azul oscuro profundo */
+    padding: 25px;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 2.2rem;
+}
+
+main {
+    background-color: #ffffff;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+footer {
+    background-color: #2d3748;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+p {
+    line-height: 1.8;
+    color: #4a5568;
+}
+
+/* ========================================================
+   2. REQUISITO: Saltar al contenido principal (:focus y position)
+   ======================================================== */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background: #e53e3e; /* Rojo llamativo para accesibilidad */
+    color: #ffffff;
+    padding: 12px 20px;
+    z-index: 999;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Solo es visible al presionar la tecla Tabulador (Enfoque) */
+.skip-link:focus {
+    top: 10px;
+}
+
+/* ========================================================
+   3. REQUISITO: Navegación atractiva usando Flexbox (3 propiedades mín.)
+   ======================================================== */
+.nav-flex {
+    display: flex;                /* Propiedad 1: Flex */
+    justify-content: center;       /* Propiedad 2: Distribución centrada */
+    gap: 20px;                    /* Propiedad 3: Espaciado uniforme */
+}
+
+.nav-flex a {
+    color: #e2e8f0;               /* Color gris claro de alto contraste */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Efecto suave */
+}
+
+/* REQUISITO: Pseudo-clase :hover interesante */
+.nav-flex a:hover {
+    background-color: #3182ce;    /* Cambia el fondo a un azul brillante */
+    color: #ffffff;               /* Cambia el texto a blanco puro */
+}
+
+.nav-flex a.active {
+    background-color: #2b6cb0;
+    color: #ffffff;
+}
+
+/* ========================================================
+   4. REQUISITO: Estilo de imágenes usando el Modelo de Caja
+   ======================================================== */
+img {
+    border: 4px solid #cbd5e0;    /* Mínimo 1: Border */
+    padding: 8px;                 /* Mínimo 2: Padding */
+    border-radius: 8px;           /* Mínimo 3: Border-radius */
+    max-width: 100%;
+    height: auto;
+    background-color: #ffffff;
+}
+
+/* Imágen de portada de la página de inicio */
+.destacado {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ========================================================
+   5. REQUISITO: Propiedad Grid en elemento Padre (2 columnas mín.)
+   ======================================================== */
+.contenedor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea exactamente 2 columnas */
+    gap: 25px;                             /* Espaciado en la cuadrícula */
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* ========================================================
+   6. REQUISITO: Propiedad Flex en elemento Padre
+   ======================================================== */
+.contenedor-flex {
+    display: flex;
+    flex-wrap: wrap;              /* Permite envolver las imágenes si no caben */
+    justify-content: space-around; /* Distribuye el espacio eficientemente */
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.contenedor-flex img {
+    width: 250px;                 /* Ancho fijo para las imágenes del flex */
+    object-fit: cover;
+}
+
+/* ========================================================
+   7. REQUISITO: Implementar el selector avanzado nth-child
+   ======================================================== */
+/* Le damos un radio de borde y color de borde diferente a cada imagen del flex */
+.contenedor-flex img:nth-child(1) {
+    border-radius: 25px 0px 25px 0px;
+    border-color: #4299e1;
+}
+
+.contenedor-flex img:nth-child(2) {
+    border-radius: 0px 25px 0px 25px;
+    border-color: #48bb78;
+}
+
+.contenedor-flex img:nth-child(3) {
+    border-radius: 50%; /* Completamente redonda */
+    border-color: #ed8936;
+}
+
+.contenedor-flex img:nth-child(4) {
+    border-radius: 15px;
+    border-color: #ecc94b;
+}
+
+.contenedor-flex img:nth-child(5) {
+    border-radius: 4px;
+    border-color: #9f7aea;
+}
